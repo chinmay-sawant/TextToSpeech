@@ -182,18 +182,25 @@ body {
 /* Main Content */
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 4rem;
+  /* single column so control-panel sits below hero badges */
+  grid-template-columns: 1fr;
+  gap: 1.25rem; /* reduced gap */
   width: 100%;
-  max-width: 1400px;
+  max-width: 1100px; /* slightly narrower to fit */
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 1.75rem 1rem; /* reduce vertical padding */
   align-items: start;
   flex: 1;
 }
 
 .hero-section {
-  padding-top: 2rem;
+  padding: 1.25rem 0; /* compact */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically inside section */
+  text-align: center;
+  gap: 0.5rem;
 }
 
 .hero-title {
@@ -244,11 +251,14 @@ body {
   background: var(--surface-glass);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-light);
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: var(--shadow-strong);
-  position: sticky;
-  top: 120px;
+  border-radius: 14px;
+  padding: 1rem; /* tighter */
+  box-shadow: var(--shadow-medium);
+  /* center and allow wider inputs similar to lovable.dev */
+  width: 100%;
+  max-width: 760px; /* slightly narrower but still wide */
+  margin: 0 auto;
+  position: relative;
 }
 
 .input-group {
@@ -282,7 +292,7 @@ body {
 
 .text-input {
   width: 100%;
-  padding: 1rem;
+  padding: 0.75rem 0.75rem; /* smaller padding */
   border: 1px solid var(--border-light);
   border-radius: 10px;
   font-size: 0.95rem;
@@ -393,11 +403,7 @@ body {
   height: 380px;
   top: -120px;
   left: -100px;
-  background: radial-gradient(
-    circle,
-    rgba(99, 102, 241, 0.25),
-    transparent 60%
-  );
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent 60%);
   animation: float 18s ease-in-out infinite;
 }
 
@@ -406,11 +412,7 @@ body {
   height: 280px;
   top: 45%;
   right: -100px;
-  background: radial-gradient(
-    circle,
-    rgba(139, 92, 246, 0.18),
-    transparent 60%
-  );
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18), transparent 60%);
   animation: float 14s ease-in-out infinite reverse;
 }
 
@@ -419,11 +421,7 @@ body {
   height: 220px;
   bottom: -70px;
   left: 28%;
-  background: radial-gradient(
-    circle,
-    rgba(236, 72, 153, 0.15),
-    transparent 60%
-  );
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.15), transparent 60%);
   animation: float 22s ease-in-out infinite;
 }
 /* Animations */
