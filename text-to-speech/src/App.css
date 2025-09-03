@@ -182,18 +182,25 @@ body {
 /* Main Content */
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 4rem;
+  /* single column so control-panel sits below hero badges */
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3.5rem 2rem;
   align-items: start;
   flex: 1;
 }
 
 .hero-section {
-  padding-top: 2rem;
+  padding: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically inside section */
+  text-align: center;
+  gap: 1rem;
 }
 
 .hero-title {
@@ -223,6 +230,7 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center; /* center badges under hero */
 }
 
 .badge {
@@ -246,8 +254,11 @@ body {
   border-radius: 20px;
   padding: 2rem;
   box-shadow: var(--shadow-strong);
-  position: sticky;
-  top: 120px;
+  /* center and allow wider inputs similar to lovable.dev */
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .input-group {
@@ -275,11 +286,13 @@ body {
 
 .textarea-wrapper {
   position: relative;
+  /* allow textarea to stretch horizontally */
+  width: 100%;
 }
 
 .text-input {
   width: 100%;
-  padding: 1rem;
+  padding: 1.125rem 1rem;
   border: 1px solid var(--border-light);
   border-radius: 12px;
   font-size: 1rem;
@@ -290,6 +303,7 @@ body {
   outline: none;
   transition: all 0.2s ease;
   font-family: inherit;
+  min-width: 0;
 }
 
 .text-input:focus {
